@@ -1,0 +1,46 @@
+{{#block "header"}}
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>{{#block "title"}}Hero Squad{{/block}}</title>
+        <link href="https://fonts.googleapis.com/css?family=Acme|Bangers|Poppins:500&display=swap" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel='stylesheet' href='/app.css'>
+    </head>
+    <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <img id="navLogo" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/891b4e14-04eb-4faf-966f-b7a0106a349d/dagpo39-d16b0b97-9e83-434b-915a-0aaafaf094ee.jpg/v1/fill/w_1024,h_576,q_75,strp/dc_logo_justice_league_wallpaper_by_sonofgotham_dagpo39-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvODkxYjRlMTQtMDRlYi00ZmFmLTk2NmYtYjdhMDEwNmEzNDlkXC9kYWdwbzM5LWQxNmIwYjk3LTllODMtNDM0Yi05MTVhLTBhYWFmYWYwOTRlZS5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.2Bz4Z9v7qdmNPJcQ5oDwdI9-jZWL-Cc0IZpoOsIlIdU" height="30px"
+                 alt="logo"/>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    {{#block "navbar"}}
+                    {{/block}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+{{/block}}
+<!--begin main template-->
+<div class="container">
+    <div class="container-fluid text-sm-center bg-secondary">
+        <h1 class="text-center">Welcome to Hero Squad</h1>
+    </div>
+    <div>
+        {{#block "content"}}
+        {{/block}}
+    </div>
+
+</div>
+<!--end main template-->
+{{#block "footer"}}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+{{/block}}
