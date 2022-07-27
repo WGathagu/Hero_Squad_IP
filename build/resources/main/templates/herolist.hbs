@@ -1,8 +1,9 @@
 {{#partial "navbar"}}
-    <li class="nav-item fs-5"><a class="text-white nav-link" href="/">Home</a></li>
-    <li class="nav-item fs-5 active"><a class="text-white nav-link" href="/heroes/new">Register Hero</a></li>
-    <li class="nav-item fs-5"><a class="text-white nav-link" href="/squads/new">Create Squad</a></li>
-    <li class="nav-item fs-5"><a class="text-white nav-link" href="/heroes">List of Squads and Heroes</a></li>
+    <li class="nav-item fs-5"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item fs-5"><a class="nav-link" href="/heroes/new">Register Hero</a></li>
+    <li class="nav-item fs-5><a class="nav-link" href="/squads/new">Create Squad</a></li>
+    <li class="nav-item fs-5"><a class="nav-link" href="/squads">List of Squads</a></li>
+    <li class="nav-item fs-5 active""><a class="nav-link" href="/heroes">List of Heroes</a></li>
 {{/partial}}
 
 {{#partial "content"}}
@@ -22,7 +23,7 @@
                 <p>{{hero.age}}</p>
             </div>
             <div class="col-md-4">
-                <h5>Strength</h5>
+                <h5>Power</h5>
                 <p>{{hero.power}}</p>
             </div>
             <div class="col-md-4">
@@ -30,8 +31,8 @@
                 <p>{{hero.weakness}}</p>
             </div>
         </div>
-        <a class="btn btn-outline-primary" href="/heroes/{{hero.heroID}}/update">Update Info</a>
-        <a class="btn btn-outline-danger" href="/heroes/{{hero.heroID}}/remove">Delete Permanently</a>
+        <a class="btn btn-outline-primary" href="/heroes/{{hero.heroID}}/update">Update</a>
+        <a class="btn btn-outline-danger" href="/heroes/{{hero.heroID}}/remove">Delete</a>
     </div>
 {{/partial}}
 
