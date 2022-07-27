@@ -28,5 +28,12 @@ public class App {
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 
+        //get: create squad page
+        get("/squads/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("uniqueId", request.session().attribute("uniqueId"));
+            return new ModelAndView(model, "squadform.hbs");
+        }, new HandlebarsTemplateEngine());
+
     }
 }

@@ -1,0 +1,30 @@
+{{#partial "navbar"}}
+    <li class="nav-item fs-5"><a class="text-white nav-link" href="/">Home</a></li>
+    <li class="nav-item fs-5"><a class="text-white nav-link" href="/heroes/new">Register Hero</a></li>
+    <li class="nav-item active fs-5"><a class="text-white nav-link" href="/squads/new">Create Squad</a></li>
+    <li class="nav-item fs-5"><a class="text-white nav-link" href="/heroes">List of Squads and Heroes</a></li>
+{{/partial}}
+
+{{#partial "content"}}
+    <div class="text-center m-5 fs-2">
+        Register a New Squad
+    </div>
+    <div id="newHeroForm" class="bg-light">
+            <form action="/heroes/new" method="post">
+                <div class="form-group m-2">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Enter name of new squad" required>
+                </div>
+                <div class="form-group m-2">
+                    <label for="cause">Cause</label>
+                    <input type="text" id="cause" name="cause" class="form-control" placeholder="Enter cause of squad" min="0" required>
+                </div>
+                <div class="text-center form-group m-3">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <button class="btn btn-secondary" type="reset">Reset</button>
+                </div>
+            </form>
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}
