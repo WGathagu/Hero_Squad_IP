@@ -12,6 +12,12 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
+        //home page
+        get("/", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
         //create hero page
         get("/heroes/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
@@ -84,22 +90,47 @@ public class App {
             return new ModelAndView(model, "heroes-squads.hbs");
         }, new HandlebarsTemplateEngine());*/
 
+        post("/success", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String uniqueId = request.queryParams("uniqueId");
+            request.session().attribute("uniqueId", uniqueId);
+            model.put("uniqueId", uniqueId);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+
         //display heroes list
-        get("/heroes", (request, response) -> {
+        /*get("/heroes", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int itemId = Integer.parseInt(request.params(":id"));
             Hero foundHero = Hero.findHero(itemId);
             model.put("hero", foundHero);
             model.put("uniqueId", request.session().attribute("uniqueId"));
             return new ModelAndView(model, "herolist.hbs");
+        }, new HandlebarsTemplateEngine());*/
+
+        //display heroes list
+        get("/heroes", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("allHeroes", Hero.getHeroList());
+            model.put("uniqueId", request.session().attribute("uniqueId"));
+            return new ModelAndView(model, "herolist.hbs");
         }, new HandlebarsTemplateEngine());
 
+
         //display squads list
-        get("/squads", (request, response) -> {
+        /*get("/squads", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int itemId = Integer.parseInt(request.params(":id"));
             Squad foundSquad = Squad.findSquad(itemId);
             model.put("squad", foundSquad);
+            model.put("uniqueId", request.session().attribute("uniqueId"));
+            return new ModelAndView(model, "squadlist.hbs");
+        }, new HandlebarsTemplateEngine());*/
+
+        //display squads list
+        get("/squads", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("allSquads", Squad.getSquadsList());
             model.put("uniqueId", request.session().attribute("uniqueId"));
             return new ModelAndView(model, "squadlist.hbs");
         }, new HandlebarsTemplateEngine());

@@ -1,9 +1,9 @@
 {{#partial "navbar"}}
     <li class="nav-item fs-5"><a class="nav-link" href="/">Home</a></li>
     <li class="nav-item fs-5"><a class="nav-link" href="/heroes/new">Register Hero</a></li>
-    <li class="nav-item fs-5><a class="nav-link" href="/squads/new">Create Squad</a></li>
+    <li class="nav-item fs-5"><a class="nav-link" href="/squads/new">Create Squad</a></li>
     <li class="nav-item fs-5"><a class="nav-link" href="/squads">List of Squads</a></li>
-    <li class="nav-item fs-5 active""><a class="nav-link" href="/heroes">List of Heroes</a></li>
+    <li class="nav-item fs-5 active"><a class="nav-link" href="/heroes">List of Heroes</a></li>
 {{/partial}}
 
 {{#partial "content"}}
@@ -11,8 +11,8 @@
         List of Squads
     </div>
     <div class="text-center">
-        <h3 class="text-center"><u>{{squad.name}}</u></h3>
-        <p><b>Cause:</b>  {{squad.cause}}</p>
+        <h3 class="text-center"><u>{{squad.squadName}}</u></h3>
+        <p><b>Cause:</b>  {{squad.squadCause}}</p>
         <ul>
             {{#each squad.members}}
                 <li>{{name}}</li>
@@ -21,9 +21,9 @@
         {{#if squad.squadFull}}
             <p class="text-center">Squad Full</p>
         {{else}}
-            <a class="btn btn-outline-primary" href="/squads/{{squad.squadId}}/update">Add Members</a>
+            <a class="btn btn-outline-primary" href="/squads/{{squad.squadID}}/update">Add Members</a>
         {{/if}}
-        <a class="btn btn-outline-danger" href="/squads/{{squad.squadId}}/remove">Remove Members</a>
+        <a class="btn btn-outline-danger" href="/squads/{{squad.squadID}}/remove">Remove Members</a>
     </div>
 {{/partial}}
 
