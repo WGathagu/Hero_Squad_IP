@@ -11,25 +11,45 @@
         List of Heroes
     </div>
     <div class="text-center">
-        <h2><u>{{hero.heroName}}</u></h2>
-
         <div class="row">
             <div class="col-md-4">
+                <h5>Name</h5>
+                <p>{{heroes.heroName}}</p>
+            </div>
+            <div class="col-md-4">
                 <h5>Age</h5>
-                <p>{{hero.heroAge}}</p>
+                <p>{{heroes.heroAge}}</p>
             </div>
             <div class="col-md-4">
                 <h5>Power</h5>
-                <p>{{hero.heroSpecialPower}}</p>
+                <p>{{heroes.heroSpecialPower}}</p>
             </div>
             <div class="col-md-4">
                 <h5>Weakness</h5>
-                <p>{{hero.heroWeakness}}</p>
+                <p>{{heroes.heroWeakness}}</p>
             </div>
         </div>
         <a class="btn btn-outline-primary" href="/heroes/{{hero.heroID}}/update">Update</a>
         <a class="btn btn-outline-danger" href="/heroes/{{hero.heroID}}/remove">Delete</a>
     </div>
+    <!--<div class="text-center">
+        <h2><u>Elle</u></h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Age</h5>
+                <p>20</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Power</h5>
+                <p>laser</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Weakness</h5>
+                <p>Sunlight</p>
+            </div>
+        </div>
+    </div>-->
 {{/partial}}
 
 {{> layout.hbs}}

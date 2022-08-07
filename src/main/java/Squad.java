@@ -29,10 +29,6 @@ public class Squad {
         return squadList;
     }
 
-    public static Squad findSquad(int searchId) {
-        return squadList.get(searchId);
-        //return squadList.get(searchId - 1);
-    }
 
 
 }

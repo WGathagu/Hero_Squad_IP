@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hero {
-    private String heroName;
-    private int heroAge;
-    private String heroSpecialPower;
-    private String heroWeakness;
-    private int heroID;
+    public String heroName;
+    public int heroAge;
+    public String heroSpecialPower;
+    public String heroWeakness;
+    public int heroID;
     public String squadGroup;
-    private static List<Hero> heroList = new ArrayList<>();
+    public static List<Hero> heroList = new ArrayList<>();
 
-    private boolean duplicate = false;
+    public static boolean duplicate = false;
 
     public Hero(String name, int age, String specialpower, String weakness) {
         heroName = name;
@@ -18,10 +18,14 @@ public class Hero {
         heroSpecialPower = specialpower;
         heroWeakness = weakness;
 
+        heroList.add(this);
+        heroID = heroList.size();
+        squadGroup = "";
+
         findDuplicateHero(this);
 
         if (duplicate) {
-            System.out.println("Hero already exists");
+            System.out.println("models.Hero already exists");
         } else {
             heroList.add(this);
             this.heroID = heroList.size();
@@ -73,14 +77,14 @@ public class Hero {
         return heroList.get(searchID);
     }
 
-    public void findDuplicateHero(Hero newHeroRecord) {
+    private static void findDuplicateHero(Hero newInsertion) {
         for (Hero hero : heroList) {
-            if (newHeroRecord.heroName.equalsIgnoreCase(hero.heroName) &&
-                    newHeroRecord.heroSpecialPower.equalsIgnoreCase(hero.heroSpecialPower) &&
-                    newHeroRecord.heroWeakness.equalsIgnoreCase(hero.heroWeakness)) {
+            if (newInsertion.heroName.equalsIgnoreCase(hero.heroName) &&
+                    newInsertion.heroSpecialPower.equalsIgnoreCase(hero.heroSpecialPower) &&
+                    newInsertion.heroWeakness.equalsIgnoreCase(hero.heroWeakness)) {
                 duplicate = true;
                 break;
-            } else if (newHeroRecord.heroName.equalsIgnoreCase(hero.heroName)) {
+            } else if (newInsertion.heroName.equalsIgnoreCase(hero.heroName)) {
                 duplicate = true;
                 break;
             }
